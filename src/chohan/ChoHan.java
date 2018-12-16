@@ -9,6 +9,14 @@ public class ChoHan {
         Scanner sc = new Scanner(System.in);
         Scanner scNum = new Scanner(System.in);
         
+        System.out.println(
+        " _____  _   _ _____      _   _   ___   _   _ \n" +
+        "/  __ \\| | | |  _  |    | | | | / _ \\ | \\ | |\n" +
+        "| /  \\/| |_| | | | |    | |_| |/ /_\\ \\|  \\| |\n" +
+        "| |    |  _  | | | |    |  _  ||  _  || . ` |\n" +
+        "| \\__/\\| | | \\ \\_/ /    | | | || | | || |\\  |\n" +
+        " \\____/\\_| |_/\\___/     \\_| |_/\\_| |_/\\_| \\_/");
+        
         System.out.print("How much money would you like to start with? ");
         double money = scNum.nextDouble();
         
@@ -16,8 +24,13 @@ public class ChoHan {
             System.out.print("Will the dice sum to odd or even? ");
             String pick = sc.nextLine();
             int pickValue = parse(pick);
+           
             System.out.print("How much do you wish to bet on this? ");
             double bet = scNum.nextDouble();
+            while (bet > money) {
+                System.out.print("Bet too large, please input new bet: ");
+                bet = scNum.nextDouble();
+            }
         
             die1.roll();
             die2.roll();
