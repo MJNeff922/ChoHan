@@ -24,6 +24,11 @@ public class ChoHan {
             System.out.print("Will the dice sum to odd or even? ");
             String pick = sc.nextLine();
             int pickValue = parse(pick);
+            while (pickValue == 0) {
+                System.out.println("You didn't pick odd or even, please try again.");
+                pick = sc.nextLine();
+                pickValue = parse(pick);
+            }
            
             System.out.print("How much do you wish to bet on this? ");
             double bet = scNum.nextDouble();
